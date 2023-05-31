@@ -1,0 +1,27 @@
+<%- include('partials/header'); -%>
+
+
+<h1>Welcome, <%= teacher.username %>!</h1>
+
+<h2>Teacher Information</h2>
+<p><strong>Name:</strong> <%= teacher.name %></p>
+<p><strong>Address:</strong> <%= teacher.address %></p>
+<p><strong>Phone:</strong> <%= teacher.phone %></p>
+
+<h2>Working Experiences</h2>
+<% if (teacher.workingExperience && teacher.workingExperience.length > 0) { %>
+  <ul>
+    <% teacher.workingExperience.forEach((experience) => { %>
+      <li>
+        <strong>Duration:</strong> <%= experience.duration %><br>
+        <strong>School Name:</strong> <%= experience.schoolName %><br>
+        <strong>School Address:</strong> <%= experience.schoolAddress %><br>
+      </li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <p>No working experiences found.</p>
+<% } %>
+
+
+<%- include('partials/footer'); -%>

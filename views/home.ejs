@@ -1,0 +1,201 @@
+<%- include('partials/header'); -%>
+
+    <!-- Navbar strts -->
+    <section id="title">
+      <div class="">
+        <nav class="navbar navbar-light bg-light navbar-expand fixed-top" style="background-color: #F6F1F1">
+            <a class="navbar-brand" href="#">
+                <h2>Shikshak Saathi</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- </nav> -->
+        <!-- <nav class="navbar navbar-light bg-light"> -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a id="loginBtn" class="nav-link" href="#" style="font-family: Montserrat; font-size: 1.2rem; color: rgb(20, 108, 150);"> Login </a>
+              <div id="myModal" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <a href="/login" class="btn btn-outline-primary btn-lg " role="button" aria-pressed="true" >Login as Teacher</a>&nbsp;
+                <a href="/m_login" class="btn btn-outline-primary btn-lg" role="button" aria-pressed="true">Login as Management</a>
+              </div>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/signup" style="font-family: Montserrat; font-size: 1.2rem; color: rgb(20, 108, 150);">Create Account</a>
+            </li>
+              <!-- <button id="loginBtn">Login</button>
+                <div id="myModal" class="modal">
+
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <a href="/login" class="btn btn-outline-primary btn-lg " role="button" aria-pressed="true" >Login as Teacher</a>&nbsp;
+                  <a href="/m_login" class="btn btn-outline-primary btn-lg" role="button" aria-pressed="true">Login as Management</a>
+                </div>
+                </div>
+              <a href="/signup" class="btn btn-outline-primary btn-lg" role="button" aria-pressed="true">Create account</a> -->
+
+        </nav>
+    </div>
+</section>
+    <!-- Navbar ends -->
+
+<div class="bg-img">
+  <img src="/images/homeimg.png" alt="">
+  <div id="text-overlay">
+  <p id="typing-text"></p>
+</div>
+</div>
+
+
+
+        <section class="mt-5">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="card" >
+                            <img class="card-img-top" src="https://static.toiimg.com/photo/msid-97345393/97345393.jpg" alt="Card image">
+                            <div class="card-body">
+                                <h3 class="card-title">Eknath Shinde</h3>
+                                <p class="card-text">Hon'ble Chief Minister, Maharashtra</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="card" >
+                            <img class="card-img-top" src="https://behanbox.com/wp-content/uploads/2020/08/2-1.jpg" alt="Card image">
+                                <div class="card-body">
+                                    <h3 class="card-title">Varsha Gaikwad</h3>
+                                    <p class="card-text">Hon'ble Education Minister, Maharashtra</p>
+                                </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    <!-- CM and education minister card ends -->
+    <!-- About us strts -->
+        <section class="my-3" style= "background-color: #7BE7F7">
+
+
+            <div class="py-3">
+                <h1 class="text-center">About Us</h1>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <img src="/images/aboutusimg.png" class="img-fluid aboutimg">
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <!-- <h2 class="display-4">I am Thapa Technical</h2> -->
+                        <p class="py-2">Teacher is one of the three pivotal driving forces of a school. The onus of building a child's personality lies mainly on the teacher. To provide for the responsibility of the State Government to manage the posting and transfer of teachers in order to maintain clear stats of the teachers the "Government of Maharashtra Teacher Transfer Portal" has been put in place. Teachers are being transferred from the place of posting various grounds from time to time, which consumes a lot of time and complications through offline mode. In order to address the issue promptly, the portal for posting and transfer is being operationalized.</p>
+                        <!-- <a href="about.php" class="btn btn-primary">Know More</a> -->
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+    <!-- About us completed -->
+
+    <div class="col-lg-12 col-md-12 col-12 mt-4">
+        <div class="card " >
+
+                <div class="card-body bg-danger text-white">
+                    <h3 class="card-title">Important Information</h3>
+                    <p class="card-text">If users find any mismatch of your information on the portal, you can mail your objection with your Id at the email id-</p>
+                </div>
+        </div>
+    </div>
+     <!-- Contact Us -->
+            <section class="my-4">
+                <div class="py-4">
+                        <h1 class="text-center">Get in Touch</h1>
+                </div>
+                <div class="w-50 m-auto">
+                    <form action="userinfo.php" method="post">
+                        <div class="form-group">
+                            <label for="">Username</label>
+                            <input type="text" name="user" autocomplete="off" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Email-id</label>
+                            <input type="text" name="email" autocomplete="off" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Mobile</label>
+                            <input type="text" name="mobile" autocomplete="off" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Comments</label>
+                            <textarea class="form-control" name="comments"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </section>
+    <!-- Contact Us completed -->
+
+
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("loginBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+
+
+      const text = '"TEACHING IS THE ONLY PROFESSION WHICH MAKES ALL THE OTHER PROFESSIONS POSSIBLE"';
+const typingSpeed = 50; // Adjust typing speed (in milliseconds)
+
+function typeWriter(text, element, speed) {
+  let index = 0;
+
+  function type() {
+    if (index < text.length) {
+      element.textContent += text.charAt(index);
+      index++;
+      setTimeout(type, speed);
+    }
+  }
+
+  type();
+}
+
+const typingText = document.getElementById("typing-text");
+typeWriter(text, typingText, typingSpeed);
+
+    </script>
+
+<%- include('partials/footer'); -%>

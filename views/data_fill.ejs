@@ -1,0 +1,129 @@
+<%- include('partials/header'); -%>
+
+<div class="form-container">
+  <h1>Teacher Details </h1>
+  <form action="/data_fill" method="POST" enctype="multipart/form-data">
+  <label>
+    <span>Name:</span>
+    <input type="text" name="name" required>
+  </label>
+
+  <label>
+    <span>Phone Number:</span>
+    <input type="tel" name="phone" required>
+  </label>
+
+  <label>
+    <span>Address:</span>
+    <input type="text" name="address" required>
+  </label>
+
+  <label>
+    <span>Teacher Id:</span>
+    <input type="number" name="teacherId" required>
+  </label>
+
+  <label>Working Experience: </label>
+
+  <div class="container_exp mx-5">
+      <table class="_table">
+          <thead>
+              <tr>
+                  <th>Duration</th>
+                  <th>School Name</th>
+                  <th>School Address</th>
+                  <th width="50px">
+                      <div class="action_container">
+                          <button class="success" onclick="event.preventDefault(); create_tr('table_body')">>
+                              <i class="fa fa-plus"></i>
+                          </button>
+                      </div>
+                  </th>
+              </tr>
+          </thead>
+          <tbody id="table_body">
+              <tr>
+                  <td>
+                      <input type="text" class="form_control" name="duration"placeholder="DD/MM/YY - DD/MM/YY">
+                  </td>
+                  <td>
+                      <input type="text" class="form_control" name= "schoolName" placeholder="">
+                  </td>
+                  <td>
+                      <textarea class="form_control" placeholder="" name="schoolAddress" id="" cols="30" rows="2"></textarea>
+                  </td>
+                  <td>
+                      <div class="action_container">
+                          <button class="danger" onclick="remove_tr(this)">
+                              <i class="fa fa-close"></i>
+                          </button>
+                      </div>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+
+  <button class=" teacherdetailsavebtn btn btn-outline-primary btn-lg" type="submit">Save</button>
+</form>
+
+</div>
+
+
+
+<script>
+  const form = document.querySelector('form');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    console.log(data); // added this line to log the form data
+    fetch('/data_fill', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  });
+
+
+
+  function create_tr(table_id) {
+    var table = document.getElementById(table_id);
+    var row_index = table.rows.length; // get the current number of rows in the table
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    cell1.innerHTML = `<input type="text" class="form_control" placeholder="DD/MM/YY - DD/MM/YY" name="workingExperience[${row_index}].duration">`;
+    cell2.innerHTML = `<input type="text" class="form_control" placeholder="" name="workingExperience[${row_index}].schoolName">`;
+    cell3.innerHTML = `<textarea class="form_control" placeholder="" name="workingExperience[${row_index}].schoolAddress" id="" cols="30" rows="2"></textarea>`;
+    cell4.innerHTML = '<div class="action_container"><button class="danger" onclick="remove_tr(this)"><i class="fa fa-close"></i></button></div>';
+  }
+
+
+
+
+  function remove_tr(element) {
+  // Get the row that contains the remove button
+  var row = element.parentNode.parentNode.parentNode;
+  // Remove the row from the table
+  row.remove();
+}
+
+
+
+</script>
+
+
+<%- include('partials/footer'); -%>
